@@ -142,7 +142,7 @@
 				4E3C303F1D61DE7E000CC74C /* AuthAPIManager.h */,
 				4E3C30401D61DE7E000CC74C /* AuthAPIManager.m */,
 			);
-			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		4E3C30471D61DF64000CC74C /* Utils */ = {
