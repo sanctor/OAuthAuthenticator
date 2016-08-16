@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "AuthAPIManager.h"
 #import "DetailsViewController.h"
+#import "ProgressHUD.h"
 #import "Utils.h"
 
 @interface LoginViewController () <UIWebViewDelegate>
@@ -22,6 +23,7 @@
     self.title = NSLocalizedString(@"Login", nil);
 
     if (![AuthAPIManager shared].authenticated) {
+        [ProgressHUD show:NSLocalizedString(@"Loading data", nil) Interaction:NO];
         [self.webView loadRequest:[NSURLRequest requestWithURL:[AuthAPIManager shared].loginURL]];
     } else {
         [self navigateToDetail];
@@ -47,6 +49,8 @@
         }];
 }
 
+#pragma mark - Web View Delegate
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSURL *reqURL = request.URL;
 
@@ -66,6 +70,12 @@
 
     return YES;
 }
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [ProgressHUD dismiss];
+}
+
+#pragma mark -
 
 - (void)dealloc {
     self.webView = nil;

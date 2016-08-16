@@ -16,7 +16,6 @@
 #define API_CLIENT_SECRET @"t7MAa7DdLeHzsbFPnuQHLbBihMnlhNkKMWylw9Iii+o="
 #define API_SCOPE_ID @"urn:df09449a-1e7d-4d89-94c3-48c659881cf6"
 #define API_REDIRECT_URI @"sgauth://oauth2Callback"
-//#define CODE_FLOW_URL @"https://accounts.matrix42.com/issue/oauth2/authorize?client_id=2602af7f-f6a4-43db-a871-c63d01689541&scope=urn%3adf09449a-1e7d-4d89-94c3-48c659881cf6&redirect_uri=sgauth%3a%2f%2foauth2Callback&response_type=code"
 
 @interface AuthAPIManager ()
 @property (nonatomic, strong) AFOAuth2Manager *manager;
@@ -61,6 +60,8 @@
     return [NSURL URLWithString:urlString];
 }
 
+#pragma mark -
+
 - (NSError *)fixError:(NSError *)error errorDomain:(NSString *)errorDomain {
     NSData *errorData = error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey];
     if (errorData) {
@@ -91,6 +92,8 @@
 
     return error;
 }
+
+#pragma mark -
 
 - (void)loadUserDataSuccess:(void (^)(id))success failure:(void (^)(NSError *))failure {
     [self.manager GET:@"api/session/profile"
@@ -145,6 +148,8 @@
 
     _userProfile = nil;
 }
+
+#pragma mark -
 
 - (void)dealloc {
     self.manager = nil;

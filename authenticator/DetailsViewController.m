@@ -34,10 +34,14 @@
 }
 
 - (void)navigateToLogin {
-    DetailsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      DetailsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
 
-    [self.navigationController setViewControllers:@[ vc ] animated:YES];
+      [self.navigationController setViewControllers:@[ vc ] animated:YES];
+    });
 }
+
+#pragma mark -
 
 - (void)loadUserData {
     [ProgressHUD show:NSLocalizedString(@"Loading data", nil) Interaction:NO];
@@ -57,7 +61,6 @@
                                                              [self navigateToLogin];
                                                            }];
           [alert addAction:okAction];
-          [self presentViewController:alert animated:YES completion:nil];
           [self presentViewController:alert animated:YES completion:nil];
         }];
 }
@@ -284,6 +287,8 @@
 
     return cell;
 }
+
+#pragma mark -
 
 - (void)dealloc {
     self.refreshControl = nil;

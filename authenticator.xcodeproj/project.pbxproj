@@ -209,6 +209,7 @@
 				TargetAttributes = {
 					4E3C30211D61A62D000CC74C = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = PG278JX792;
 					};
 				};
 			};
@@ -421,6 +422,7 @@
 			baseConfigurationReference = DAE1A594A4561B961CF41137 /* Pods-authenticator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = authenticator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sanctor.authenticator;
@@ -433,6 +435,7 @@
 			baseConfigurationReference = 46EB3EEDE37CFE6991A0FF79 /* Pods-authenticator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = authenticator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sanctor.authenticator;
