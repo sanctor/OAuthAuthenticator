@@ -32,8 +32,6 @@
     DetailsViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
 
     [self.navigationController setViewControllers:@[ vc ] animated:YES];
-
-    //    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://accounts.matrix42.com/my/#/account"]]];
 }
 
 - (void)authWithCode:(NSString *)authCode {

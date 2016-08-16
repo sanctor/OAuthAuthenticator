@@ -107,6 +107,8 @@
           }
         }
         failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
+          [self logout];
+
           error = [self fixError:error errorDomain:@"user_data"];
           NSLog(@"User data error: %@", error);
           if (failure) {
@@ -135,6 +137,13 @@
               failure(error);
           }
         }];
+}
+
+- (void)logout {
+    self.credential = nil;
+    [AFOAuthCredential deleteCredentialWithIdentifier:API_HOST];
+
+    _userProfile = nil;
 }
 
 - (void)dealloc {

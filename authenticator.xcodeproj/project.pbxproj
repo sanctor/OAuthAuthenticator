@@ -19,6 +19,8 @@
 		4E3C304A1D61E7AB000CC74C /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C30491D61E7AB000CC74C /* DetailsViewController.m */; };
 		4E3C304F1D61FB36000CC74C /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C304E1D61FB36000CC74C /* UserProfile.m */; };
 		4E3C30521D620368000CC74C /* NSDictionary+Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C30511D620368000CC74C /* NSDictionary+Validate.m */; };
+		4EF8E8A21D62FD470077060B /* EnterpriseAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8E8A11D62FD470077060B /* EnterpriseAccount.m */; };
+		4EF8E8A61D6304E40077060B /* NSDate+ISO8601.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8E8A51D6304E40077060B /* NSDate+ISO8601.m */; };
 		9804B978A59D77509CBC31B4 /* libPods-authenticator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAFECF69C1C5FAB3491E6541 /* libPods-authenticator.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,10 @@
 		4E3C304E1D61FB36000CC74C /* UserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		4E3C30501D620368000CC74C /* NSDictionary+Validate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Validate.h"; path = "Categories/NSDictionary+Validate.h"; sourceTree = "<group>"; };
 		4E3C30511D620368000CC74C /* NSDictionary+Validate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Validate.m"; path = "Categories/NSDictionary+Validate.m"; sourceTree = "<group>"; };
+		4EF8E8A01D62FD470077060B /* EnterpriseAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnterpriseAccount.h; sourceTree = "<group>"; };
+		4EF8E8A11D62FD470077060B /* EnterpriseAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnterpriseAccount.m; sourceTree = "<group>"; };
+		4EF8E8A41D6304E40077060B /* NSDate+ISO8601.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+ISO8601.h"; path = "Categories/NSDate+ISO8601.h"; sourceTree = "<group>"; };
+		4EF8E8A51D6304E40077060B /* NSDate+ISO8601.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ISO8601.m"; path = "Categories/NSDate+ISO8601.m"; sourceTree = "<group>"; };
 		BAFECF69C1C5FAB3491E6541 /* libPods-authenticator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-authenticator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE1A594A4561B961CF41137 /* Pods-authenticator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-authenticator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-authenticator/Pods-authenticator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +129,8 @@
 				4E3C303D1D61B469000CC74C /* NSString+URLEncode.m */,
 				4E3C30501D620368000CC74C /* NSDictionary+Validate.h */,
 				4E3C30511D620368000CC74C /* NSDictionary+Validate.m */,
+				4EF8E8A41D6304E40077060B /* NSDate+ISO8601.h */,
+				4EF8E8A51D6304E40077060B /* NSDate+ISO8601.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -130,10 +138,9 @@
 		4E3C30431D61DE90000CC74C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				4EF8E8A31D62FD4E0077060B /* Classes */,
 				4E3C303F1D61DE7E000CC74C /* AuthAPIManager.h */,
 				4E3C30401D61DE7E000CC74C /* AuthAPIManager.m */,
-				4E3C304D1D61FB36000CC74C /* UserProfile.h */,
-				4E3C304E1D61FB36000CC74C /* UserProfile.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -146,6 +153,17 @@
 				4E3C30451D61DF5D000CC74C /* Utils.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		4EF8E8A31D62FD4E0077060B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4E3C304D1D61FB36000CC74C /* UserProfile.h */,
+				4E3C304E1D61FB36000CC74C /* UserProfile.m */,
+				4EF8E8A01D62FD470077060B /* EnterpriseAccount.h */,
+				4EF8E8A11D62FD470077060B /* EnterpriseAccount.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		7F15C8CC68C89BA063D6A3E7 /* Pods */ = {
@@ -280,12 +298,14 @@
 			files = (
 				4E3C304F1D61FB36000CC74C /* UserProfile.m in Sources */,
 				4E3C302D1D61A62D000CC74C /* LoginViewController.m in Sources */,
+				4EF8E8A21D62FD470077060B /* EnterpriseAccount.m in Sources */,
 				4E3C302A1D61A62D000CC74C /* AppDelegate.m in Sources */,
 				4E3C30271D61A62D000CC74C /* main.m in Sources */,
 				4E3C30461D61DF5D000CC74C /* Utils.m in Sources */,
 				4E3C304A1D61E7AB000CC74C /* DetailsViewController.m in Sources */,
 				4E3C303E1D61B469000CC74C /* NSString+URLEncode.m in Sources */,
 				4E3C30411D61DE7E000CC74C /* AuthAPIManager.m in Sources */,
+				4EF8E8A61D6304E40077060B /* NSDate+ISO8601.m in Sources */,
 				4E3C30521D620368000CC74C /* NSDictionary+Validate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
